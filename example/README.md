@@ -1,11 +1,9 @@
 
-# Testing 123 
-![](https://img.shields.io/badge/-BSD%202-Clause%20"Simplified"%20License-orange)
+# sgasgfasdgf ![](https://img.shields.io/badge/-BSD%203%20Clause%20"New"%20or%20"Revised"%20License-orange)
 
 ## Description
 
-Test description here
-
+asdgfasdfsagfsda
 
 ## Table of Contents
   * [Installation](#installation)
@@ -14,20 +12,14 @@ Test description here
 
 ## Installation
 
-Test install steps
-1. Test instal step 1
-2. Test Install step 2
-3. Test install step 3
-
+asfgasdsv
 
 ## Credits
 
-Collaborators include:
--  James Pericles
-- Colin shelton
+asdfadsfDAF
 
 ## License
 
 This project is licensed under: 
-BSD 2-Clause "Simplified" License
+BSD 3 Clause "New" or "Revised" License
 

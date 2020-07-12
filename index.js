@@ -35,8 +35,8 @@ function promptUser() {
         "Apache License 2.0",
         "GNU General Public License v3.0",
         "MIT License",
-        'BSD 2-Clause "Simplified" License',
-        'BSD 3-Clause "New" or "Revised" License',
+        'BSD 2 Clause "Simplified" License',
+        'BSD 3 Clause "New" or "Revised" License',
         "Boost Software License 1.0",
         "Creative Commons Zero v1.0 Universal",
         "Eclipse Public License 2.0",
@@ -56,8 +56,7 @@ function makeReadMe(answers) {
   const licenseCleaned = licenseSpaced.replace(/\s/g, "%20");
   console.log(licenseCleaned);
   return `
-# ${answers.title} 
-![](https://img.shields.io/badge/-${licenseCleaned}-orange)
+# ${answers.title} ![](https://img.shields.io/badge/-${licenseCleaned}-orange)
 
 ## Description
 
