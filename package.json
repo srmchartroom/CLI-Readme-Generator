@@ -1,0 +1,19 @@
+{
+  "name": "cli-readme-generator",
+  "version": "1.0.0",
+  "description": "The application package is nodejs CLI application that leverages the inquirer package among others, takes user input, and outputs a preformatted and best-practice-based Readme.md for repositories and applications.  This application is most beneficial to developers and individuals who use platforms such as GitHub to store, source control, share, and collaborate upon applications..",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srmchartroom/CLI-Readme-Generator.git"
+  },
+  "author": "srmchartroom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srmchartroom/CLI-Readme-Generator/issues"
+  },
+  "homepage": "https://github.com/srmchartroom/CLI-Readme-Generator#readme"
+}
