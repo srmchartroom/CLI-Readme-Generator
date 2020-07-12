@@ -65,6 +65,11 @@ function promptUser() {
     },
     {
       type: "input",
+      name: "gituser",
+      message: "Please enter your GitHub username.",
+    },
+    {
+      type: "input",
       name: "questions",
       message: "Which email address should be used for follow-up questions?",
     },
@@ -120,6 +125,7 @@ ${answers.tests}
 ## Questions
 
 For questions, please contact [${answers.questions}](mailto:${answers.questions}).
+See ${answers.gituser}(https://github.com/${answers.gituser}) for additional repositories and contact information.
 
 ## Credits
 
