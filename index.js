@@ -52,8 +52,11 @@ function promptUser() {
 }
 
 function makeReadMe(answers) {
+  const licenseSpaced = answers.license;
+  const licenseCleaned = licenseSpaced.replace(/\s/g, "%20");
+  console.log(licenseCleaned);
   return `
-#${answers.title} ![](https://img.shields.io/badge/<${answers.license}>-orange)
+#${answers.title} ![](https://img.shields.io/badge/<${licenseCleaned}>-orange)
 
 ## Description
 
@@ -83,6 +86,7 @@ ${answers.license}
 async function init() {
   try {
     const answers = await promptUser();
+
     const markdown = makeReadMe(answers);
 
     await writeFileAsync("example/README.md", markdown);
