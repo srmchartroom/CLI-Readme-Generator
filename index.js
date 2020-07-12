@@ -27,16 +27,54 @@ function promptUser() {
       message:
         "List your collaborators (with links to GitHub profiles), as well as any 3rd-party assets/creators, tutorials, etc.",
     },
+    {
+      type: "list",
+      name: "license",
+      message: "Select a license for your project.",
+      choices: [
+        "Apache License 2.0",
+        "GNU General Public License v3.0",
+        "MIT License",
+        'BSD 2-Clause "Simplified" License',
+        'BSD 3-Clause "New" or "Revised" License',
+        "Boost Software License 1.0",
+        "Creative Commons Zero v1.0 Universal",
+        "Eclipse Public License 2.0",
+        "GNU Affero General Public License v3.0",
+        "GNU General Public License v2.0",
+        "GNU Lesser General Public License v2.1",
+        "Mozilla Public License 2.0",
+        "The Unilicense",
+      ],
+    },
   ]);
+  console.log("All Done!");
 }
 
 function makeReadMe(answers) {
   return `
-#${answers.title}
+#${answers.title} ![License](https://img.shields.io/badge/${answers.license}-orange)
 
 ## Description
 
 ${answers.description}
+
+## Table of Contents
+  * [Installation](#installation)
+  * [Credits](#credits)
+  * [License](#license)
+
+## Installation
+
+${answers.installation}
+
+## Credits
+
+${answers.credits}
+
+## License
+
+${answers.credits}
 
 `;
 }
@@ -48,7 +86,7 @@ async function init() {
 
     await writeFileAsync("example/README.md", markdown);
 
-    console.log("Successfully wrote to index.html");
+    console.log("Successfully constructed your README.md");
   } catch (err) {
     console.log(err);
   }
