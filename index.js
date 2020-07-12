@@ -119,7 +119,7 @@ ${answers.tests}
 
 ## Questions
 
-For questions, please contact [${answers.questions}](${answers.questions}).
+For questions, please contact [${answers.questions}](mailto:${answers.questions}).
 
 ## Credits
 
