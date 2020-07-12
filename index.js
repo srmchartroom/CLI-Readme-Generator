@@ -9,24 +9,36 @@ function promptUser() {
     {
       type: "input",
       name: "title",
-      message: "Enter your project title.",
+      message: "Enter your project title:",
     },
     {
-      type: "input",
+      type: "editor",
       name: "description",
-      message: "Enter your project description.",
+      message: "Enter your project description:",
+    },
+    {
+      type: "editor",
+      name: "installation",
+      message: "Enter the steps required to install the application:",
+    },
+    {
+      type: "editor",
+      name: "credits",
+      message:
+        "List your collaborators (with links to GitHub profiles), as well as any 3rd-party assets/creators, tutorials, etc.",
     },
   ]);
 }
 
 function makeReadMe(answers) {
   return `
-    #${answers.title}
+#${answers.title}
 
-    ## Description
+## Description
 
-    ${answers.description}
-  `;
+${answers.description}
+
+`;
 }
 
 async function init() {
