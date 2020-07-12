@@ -54,7 +54,6 @@ function promptUser() {
 function makeReadMe(answers) {
   const licenseSpaced = answers.license;
   const licenseCleaned = licenseSpaced.replace(/\s/g, "%20");
-  console.log(licenseCleaned);
   return `
 # ${answers.title} ![](https://img.shields.io/badge/-${licenseCleaned}-orange)
 
