@@ -53,7 +53,7 @@ function promptUser() {
 
 function makeReadMe(answers) {
   return `
-#${answers.title} ![License](https://img.shields.io/badge/${answers.license}-orange)
+#${answers.title} ![](https://img.shields.io/badge/<${answers.license}>-orange)
 
 ## Description
 
@@ -74,7 +74,8 @@ ${answers.credits}
 
 ## License
 
-${answers.credits}
+This project is licensed under: 
+${answers.license}
 
 `;
 }

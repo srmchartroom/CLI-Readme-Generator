@@ -1,17 +1,10 @@
 
-#Example title ![License](https://img.shields.io/badge/GNU General Public License v2.0-orange)
+#asgsafg ![](https://img.shields.io/badge/<BSD 2-Clause "Simplified" License>-orange)
 
 ## Description
 
-Lorem Ipsum Sic Dolorsdfgdafsdfasdsdf
-asdfasdvsdaf
-asdf
-asddfasdf
-asf
-as
-vfa
-sfsa
-v
+asdfasfg
+
 
 ## Table of Contents
   * [Installation](#installation)
@@ -20,20 +13,14 @@ v
 
 ## Installation
 
-1. sfgwdfwfsdf
-2.  sdgsdfsf
-3. sfsdfsf
-4. sfsdfsdf
+sdfsfsdf
 
 ## Credits
 
-BoB Dole
-Alexander Hamilton
-Tracy Ullman
+asdfgwff
 
 ## License
 
-BoB Dole
-Alexander Hamilton
-Tracy Ullman
+This project is licensed under: 
+BSD 2-Clause "Simplified" License
 
