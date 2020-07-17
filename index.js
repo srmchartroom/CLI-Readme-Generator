@@ -4,38 +4,39 @@ const inquirer = require("inquirer");
 const util = require("util");
 const writeFileAsync = util.promisify(fs.writeFile);
 
+// prompt user function
 function promptUser() {
   return inquirer.prompt([
     {
       type: "input",
-      name: "title",
+      name: "title", // prompt a simple input for project title
       message: "Enter your project title:",
     },
     {
       type: "editor",
-      name: "description",
+      name: "description", // prompt an editor window for project description
       message: "Enter your project description:",
     },
     {
       type: "editor",
-      name: "installation",
+      name: "installation", // prompt an editor widow for installation steps
       message: "Enter the steps required to install the application:",
     },
     {
       type: "editor",
-      name: "usage",
+      name: "usage", // prompt an editor window for usage
       message:
         "Provide examples and instructions for use. Include screenshots as needed using markdown format - e.g. '![imageDescription](http://url.here.com)':",
     },
     {
       type: "editor",
-      name: "credits",
+      name: "credits", // prompt an editor window for credits
       message:
         "List your collaborators (with links to GitHub profiles), as well as any 3rd-party assets/creators, tutorials, etc.",
     },
     {
       type: "list",
-      name: "license",
+      name: "license", // prompt a list selection for license
       message: "Select a license for your project.",
       choices: [
         "Apache License 2.0",
@@ -55,36 +56,40 @@ function promptUser() {
     },
     {
       type: "confirm",
-      name: "contributing",
+      name: "contributing", // prompt a confirmation for contributions
       message: "Does this project allow outside/additional contributions under the Contributors Convenant?",
     },
     {
       type: "editor",
-      name: "tests",
+      name: "tests", // promot an editor window for tests
       message: "Please detail any/all tests that should be conducted.",
     },
     {
       type: "input",
-      name: "gituser",
+      name: "gituser", // prompt a simple input for github username
       message: "Please enter your GitHub username.",
     },
     {
       type: "input",
-      name: "questions",
+      name: "questions", // prompt a simple input for email address to send follow-up questions to
       message: "Which email address should be used for follow-up questions?",
     },
   ]);
   console.log("All Done!");
 }
 
+// function that creates the readme based on the inputs from the inquirer prompts above
 function makeReadMe(answers) {
   const licenseSpaced = answers.license;
+  // makes the selected license usable in a URL query string for creating badges
   const licenseCleaned = licenseSpaced.replace(/\s/g, "%20");
+  // sets the contribution text if the user opts to allow contributions
   if (answers.contributing == true) {
     answers.contributing = `To contribute, please follow the [Contributor Covenant](https://www.contributor-covenant.org/).`;
   } else {
     answers.contributing = "Contributions are not open at this time.";
   }
+  // the markdown to be created follows:
   return `
 # ${answers.title} ![](https://img.shields.io/badge/-${licenseCleaned}-orange) ![](https://img.shields.io/badge/-Node.js-blue) ![](https://img.shields.io/badge/-ES6-red)
 
@@ -134,16 +139,19 @@ ${answers.credits}
 `;
 }
 
+// the kickoff function to run on launch of the index.js file
 async function init() {
   try {
+    // async..await - awaits the result of inquirer prompts...
     const answers = await promptUser();
-
+    // ...  before creating the ReadMe.md
     const markdown = makeReadMe(answers);
-
-    await writeFileAsync("example/README.md", markdown);
-
+    // ... then writes the final result to a README.md file to be stored in the example folder
+    await writeFileAsync("result/README.md", markdown);
+    // ... and then logs out to the console that the README.md is created.
     console.log("Successfully constructed your README.md");
   } catch (err) {
+    // try..catch to stop script and catch any errors should they occur.
     console.log(err);
   }
 }
